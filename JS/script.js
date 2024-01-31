@@ -8,12 +8,9 @@ async function init() {
     loadFooter();
 }
 
+async function getData() {
+    const dataset = await ((await fetch('../database.json')).json());
+    const data = dataset.orders;
 
-
-// #######################################################################
-// GET DATASET
-// #######################################################################
-
-const datasets = [
-    "../database.json"
-];
+    log(data)
+}
