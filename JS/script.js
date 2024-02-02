@@ -6,15 +6,22 @@ async function init() {
     loadFooter();
 }
 
+
+
+// GET DATA FROM DATABASE
+
 async function getData() {
     const dataset = await ((await fetch('../database.json')).json());
     const data = dataset.orders;
 
     const categorizedOrders = categorizeOrdersByDate(data);
-    log(categorizedOrders);
     const orders = sortOrdersByDate(categorizedOrders);
     return orders;
 }
+
+
+
+// DATA DEVISION AND SORTING
 
 function categorizeOrdersByDate(orders) {
     const currentDate = new Date();

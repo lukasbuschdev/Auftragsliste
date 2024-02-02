@@ -1,7 +1,13 @@
+/* BODY CONTENT */
+
 #content {
     height: 100vh;
     width: 100%;
 }
+
+
+
+/* TABLE LAYOUT */
 
 .table-header {
     display: grid;
@@ -27,6 +33,10 @@
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+
+
+/* TABLE CONTENT COLUMNS */
 
 #urgent {
     background-color: var(--clr-orange);

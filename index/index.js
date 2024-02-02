@@ -1,3 +1,5 @@
+// INIT LOAD CONTENT
+
 async function loadContent() {
     const data = await getData();
 
@@ -22,15 +24,15 @@ async function loadContent() {
     renderOrders(data);
 };
 
+
+
+// RENDER FUNCTIONS 
+
 function renderOrders(data) {
     renderUrgent(data);
     renderMedium(data);
     renderLow(data);
 }
-
-
-
-// RENDER FUNCTIONS 
 
 function renderUrgent({moreThanAMonth}) {
     // log(moreThanAMonth)
