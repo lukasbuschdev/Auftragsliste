@@ -8,7 +8,8 @@
             },
             "orderdate": "12.01.2024",
             "deliverydate": "13.01.2024",
-            "status": "done"
+            "status": "in-progress",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223100528,
@@ -18,7 +19,8 @@
             },
             "orderdate": "15.01.2024",
             "deliverydate": "17.01.2024",
-            "status": "done"
+            "status": "in-progress",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223100635,
@@ -28,7 +30,8 @@
             },
             "orderdate": "20.01.2024",
             "deliverydate": "22.01.2024",
-            "status": "to-do"
+            "status": "to-do",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223100746,
@@ -38,7 +41,8 @@
             },
             "orderdate": "25.01.2024",
             "deliverydate": "27.01.2024",
-            "status": "to-do"
+            "status": "to-do",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223917859,
@@ -47,8 +51,9 @@
                 "address": "Linzergasse 78/3, 4020 Linz"
             },
             "orderdate": "30.01.2024",
-            "deliverydate": "01.02.2024",
-            "status": "to-do"
+            "deliverydate": "01.12.2023",
+            "status": "in-progress",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223164746,
@@ -58,7 +63,8 @@
             },
             "orderdate": "25.01.2024",
             "deliverydate": "27.01.2024",
-            "status": "to-do"
+            "status": "to-do",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162459,
@@ -67,8 +73,9 @@
                 "address": "Linzergasse 12, 4020 Linz"
             },
             "orderdate": "30.01.2024",
-            "deliverydate": "06.02.2024",
-            "status": "to-do"
+            "deliverydate": "06.12.2023",
+            "status": "in-progress",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162460,
@@ -77,8 +84,9 @@
                 "address": "Währinger Str. 29, 1090 Wien"
             },
             "orderdate": "22.01.2024",
-            "deliverydate": "01.02.2024",
-            "status": "to-do"
+            "deliverydate": "01.12.2023",
+            "status": "to-do",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162461,
@@ -87,8 +95,9 @@
                 "address": "Herrengasse 13, 8010 Graz"
             },
             "orderdate": "24.01.2024",
-            "deliverydate": "01.02.2024",
-            "status": "to-do"
+            "deliverydate": "01.12.2023",
+            "status": "to-do",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162462,
@@ -97,8 +106,9 @@
                 "address": "Getreidegasse 22, 5020 Salzburg"
             },
             "orderdate": "27.01.2024",
-            "deliverydate": "02.02.2024",
-            "status": "to-do"
+            "deliverydate": "02.12.2023",
+            "status": "in-progress",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162463,
@@ -107,8 +117,9 @@
                 "address": "Maria-Theresien-Str. 18, 6020 Innsbruck"
             },
             "orderdate": "29.01.2024",
-            "deliverydate": "07.03.2024",
-            "status": "to-do"
+            "deliverydate": "07.01.2024",
+            "status": "in-progress",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162464,
@@ -117,8 +128,9 @@
                 "address": "Domgasse 3, 9020 Klagenfurt"
             },
             "orderdate": "25.01.2024",
-            "deliverydate": "04.02.2024",
-            "status": "to-do"
+            "deliverydate": "04.12.2023",
+            "status": "in-progress",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162465,
@@ -128,7 +140,8 @@
             },
             "orderdate": "23.01.2024",
             "deliverydate": "29.01.2024",
-            "status": "to-do"
+            "status": "to-do",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162466,
@@ -137,8 +150,9 @@
                 "address": "Stadtplatz 34, 4600 Wels"
             },
             "orderdate": "27.01.2024",
-            "deliverydate": "03.03.2024",
-            "status": "to-do"
+            "deliverydate": "03.01.2024",
+            "status": "to-do",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162467,
@@ -147,8 +161,9 @@
                 "address": "Rathausplatz 1, 3100 St. Pölten"
             },
             "orderdate": "21.01.2024",
-            "deliverydate": "13.02.2024",
-            "status": "to-do"
+            "deliverydate": "13.12.2023",
+            "status": "in-progress",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162468,
@@ -156,9 +171,10 @@
                 "name": "Sandro Müller",
                 "address": "Marktplatz 11, 6850 Dornbirn"
             },
-            "orderdate": "02.02.2024",
-            "deliverydate": "23.02.2024",
-            "status": "to-do"
+            "orderdate": "02.12.2023",
+            "deliverydate": "23.12.2023",
+            "status": "to-do",
+            "creditorder": "no"
         },
         {
             "ordernumber": 1223162469,
@@ -167,8 +183,9 @@
                 "address": "Hauptplatz 17, 2700 Wiener Neustadt"
             },
             "orderdate": "29.01.2024",
-            "deliverydate": "15.02.2024",
-            "status": "to-do"
+            "deliverydate": "15.12.2023",
+            "status": "in-progress",
+            "creditorder": "no"
         }
     ]
 }

@@ -2,3 +2,65 @@
     height: 100vh;
     width: 100%;
 }
+
+.table-header {
+    display: grid;
+    height: 80px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: var(--clr-dark);
+}
+
+.table-header div {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgb(43, 43, 43);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.table-content {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#urgent {
+    background-color: var(--clr-orange);
+}
+
+#medium {
+    border-left: 3px solid rgb(43, 43, 43);
+    border-right: 3px solid rgb(43, 43, 43);
+    background-color: var(--clr-yellow);
+}
+
+#low {
+    background-color: var(--clr-green);
+}
+
+
+
+/* SINGLE ORDER TEMPLATES */
+
+.single-order-container {
+    height: 100px;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 3px solid rgb(43, 43, 43);
+}
+
+.single-order-container div {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+}
+
+.address {
+    border-top: 1px solid rgb(80, 80, 80);
+    border-bottom: 1px solid rgb(80, 80, 80);
+}
