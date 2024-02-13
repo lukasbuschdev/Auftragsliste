@@ -18,6 +18,9 @@
     --clr-pink: #FF6C92;
     --clr-pink-hover: #ff4979;
 
+    --clr-mla: rgb(235, 0, 0);
+    --clr-pha: rgb(0, 145, 0);
+
     --txt-gray: #cdcdcd;
 
     --load-animation-duration: 600ms ease-out;

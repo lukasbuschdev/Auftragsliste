@@ -13,6 +13,6 @@ function loadHeader() {
     includeTemplate(headerContainer, headerContent);
 };
 
-function selectDatabase(pha, mla) {
-    // const 
+function selectDatabase(attr) {
+    loadContent(attr); 
 }
