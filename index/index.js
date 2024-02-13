@@ -1,7 +1,7 @@
 // INIT LOAD CONTENT
 
 async function loadContent() {
-    const data = await getData();
+    const data = await getDataPHA();
 
     const contentContainer = $('#content');
 
@@ -28,10 +28,14 @@ async function loadContent() {
 
 // RENDER FUNCTIONS 
 
+// function renderOrders(data) {
+//     renderUrgent(data);
+//     renderMedium(data);
+//     renderLow(data);
+// }
+
 function renderOrders(data) {
-    renderUrgent(data);
-    renderMedium(data);
-    renderLow(data);
+    renderTasks(data)
 }
 
 function renderUrgent({moreThanAMonth}) {
@@ -64,6 +68,13 @@ function renderLow({oneDayToOneWeek}) {
     });
 }
 
+function renderTasks(tasks) {
+    ['urgent', 'medium', 'low'].forEach((category) => {
+        const container = $(`#${category}`);
+        container.innerHTML = tasks[category].reduce((template, task) => `${template}${urgentTemplate(task)}`, '')
+    });
+}
+
 
 
 // TEMPLATES
@@ -88,42 +99,42 @@ function urgentTemplate({customer, ordernumber, orderdate, deliverydate}) {
     `;
 }
 
-function mediumTemplate({customer, ordernumber, orderdate, deliverydate}) {
-    return /*html*/ `
-        <div class="single-order-container column">
-            <div class="row">
-                <div class="txt-600">${ordernumber}</div>
-                <div>${customer.name}</div>
-            </div>
+// function mediumTemplate({customer, ordernumber, orderdate, deliverydate}) {
+//     return /*html*/ `
+//         <div class="single-order-container column">
+//             <div class="row">
+//                 <div class="txt-600">${ordernumber}</div>
+//                 <div>${customer.name}</div>
+//             </div>
 
-            <div class="address">
-                <div>${customer.address}</div>
-            </div>
+//             <div class="address">
+//                 <div>${customer.address}</div>
+//             </div>
 
-            <div class="row">
-                <div>${orderdate}</div>
-                <div>${deliverydate}</div>
-            </div>
-        </div>
-    `;
-}
+//             <div class="row">
+//                 <div>${orderdate}</div>
+//                 <div>${deliverydate}</div>
+//             </div>
+//         </div>
+//     `;
+// }
 
-function lowTemplate({customer, ordernumber, orderdate, deliverydate}) {
-    return /*html*/ `
-        <div class="single-order-container column">
-            <div class="row">
-                <div class="txt-600">${ordernumber}</div>
-                <div>${customer.name}</div>
-            </div>
+// function lowTemplate({customer, ordernumber, orderdate, deliverydate}) {
+//     return /*html*/ `
+//         <div class="single-order-container column">
+//             <div class="row">
+//                 <div class="txt-600">${ordernumber}</div>
+//                 <div>${customer.name}</div>
+//             </div>
 
-            <div class="address">
-                <div>${customer.address}</div>
-            </div>
+//             <div class="address">
+//                 <div>${customer.address}</div>
+//             </div>
 
-            <div class="row">
-                <div>${orderdate}</div>
-                <div>${deliverydate}</div>
-            </div>
-        </div>
-    `;
-}
+//             <div class="row">
+//                 <div>${orderdate}</div>
+//                 <div>${deliverydate}</div>
+//             </div>
+//         </div>
+//     `;
+// }

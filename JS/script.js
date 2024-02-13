@@ -10,8 +10,17 @@ async function init() {
 
 // GET DATA FROM DATABASE
 
-async function getData() {
-    const dataset = await ((await fetch('../database.json')).json());
+async function getDataPHA() {
+    const dataset = await (await fetch('../databasePHA.json')).json();
+    const data = dataset.orders;
+
+    const categorizedOrders = categorizeOrdersByDate(data);
+    const orders = sortOrdersByDate(categorizedOrders);
+    return orders;
+}
+
+async function getDataMLA() {
+    const dataset = await ((await fetch('../databaseMLA.json')).json());
     const data = dataset.orders;
 
     const categorizedOrders = categorizeOrdersByDate(data);
@@ -23,23 +32,42 @@ async function getData() {
 
 // DATA DEVISION AND SORTING
 
+// function categorizeOrdersByDate(orders) {
+//     const currentDate = new Date();
+//     let moreThanAMonth = [];
+//     let oneWeekToOneMonth = [];
+//     let oneDayToOneWeek = [];
+
+//     orders.forEach(order => {
+//         const deliveryDate = parseDate(order.deliverydate);
+//         const diffTime = deliveryDate.getTime() - currentDate.getTime();
+//         const diffDays = Math.abs(diffTime / (1000 * 3600 * 24));
+
+//         if(diffDays > 30) return moreThanAMonth.push(order);
+//         if(diffDays > 7 && diffDays <= 30) return oneWeekToOneMonth.push(order);
+//         if(diffDays > 1 && diffDays <= 7) return oneDayToOneWeek.push(order);       
+//     });
+
+//     return { moreThanAMonth, oneWeekToOneMonth, oneDayToOneWeek };
+// }
+
 function categorizeOrdersByDate(orders) {
     const currentDate = new Date();
-    let moreThanAMonth = [];
-    let oneWeekToOneMonth = [];
-    let oneDayToOneWeek = [];
+    let urgent = [];
+    let medium = [];
+    let low = [];
 
     orders.forEach(order => {
         const deliveryDate = parseDate(order.deliverydate);
         const diffTime = deliveryDate.getTime() - currentDate.getTime();
         const diffDays = Math.abs(diffTime / (1000 * 3600 * 24));
 
-        if(diffDays > 30) return moreThanAMonth.push(order);
-        if(diffDays > 7 && diffDays <= 30) return oneWeekToOneMonth.push(order);
-        if(diffDays > 1 && diffDays <= 7) return oneDayToOneWeek.push(order);       
+        if(diffDays > 30) return urgent.push(order);
+        if(diffDays > 7 && diffDays <= 30) return medium.push(order);
+        if(diffDays > 1 && diffDays <= 7) return low.push(order);       
     });
 
-    return { moreThanAMonth, oneWeekToOneMonth, oneDayToOneWeek };
+    return { urgent, medium, low };
 }
 
 function parseDate(dateStr) {

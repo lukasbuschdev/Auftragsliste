@@ -4,4 +4,13 @@ header {
     background-color: gray;
 }
 
-
+.location-container button {
+    height: 40px;
+    width: fit-content;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border: 2px solid var(--clr-dark);
+    border-radius: 20px;
+    background-color: var(--clr-bg-light);
+}
