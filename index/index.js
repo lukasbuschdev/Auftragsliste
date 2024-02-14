@@ -1,17 +1,14 @@
 // INIT LOAD CONTENT
 
-async function loadContent(attr) {
-    const data = await getData(attr);
-
+function loadContent() {
     const contentContainer = $('#content');
 
     const content = /*html*/ `
         <div class="table-header">
-            <div>> 1M</div>
-            <div>> 1W < 1M</div>
-            <div>> 1T < 1W</div>
+            <div class="urgent-light">> 1M</div>
+            <div class="medium-light">> 1W < 1M</div>
+            <div class="low-light">> 1T < 1W</div>
         </div>
-
 
         <div class="table-content">
             <div id="urgent"></div>
@@ -21,43 +18,52 @@ async function loadContent(attr) {
     `;
 
     includeTemplate(contentContainer, content);
-    renderOrders(data);
+    renderOrders();
 };
 
 
 
 // RENDER FUNCTIONS 
 
-function renderOrders(data) {
-    renderTasks(data)
+async function renderOrders(attr) {
+    const data = await getData(attr);
+
+    renderTasks(data);
+    setDatabaseStyle(attr);
 }
 
 function renderTasks(tasks) {
     ['urgent', 'medium', 'low'].forEach((category) => {
         const container = $(`#${category}`);
-        container.innerHTML = tasks[category].reduce((template, task) => `${template}${urgentTemplate(task)}`, '');
+        container.innerHTML = tasks[category].reduce((template, task) => `${template}${taskTemplate(task)}`, '');
     });
+}
+
+function setDatabaseStyle(attr) {
+    const headerContainer = $('header');
+
+    headerContainer.classList.remove('mla', 'pha');
+    headerContainer.classList.add(attr);
 }
 
 
 
 // TEMPLATES
 
-function urgentTemplate({customer, ordernumber, orderdate, deliverydate}) {
+function taskTemplate({customer, ordernumber, orderdate, deliverydate}) {
+    const formattedAddress = customer.address.replace(/,/, ',<br>');
+
     return /*html*/ `
-        <div class="single-order-container column">
-            <div class="row">
-                <div class="txt-600">${ordernumber}</div>
+        <div class="single-order-container column txt-600">
+            <div class="row txt-big">
+                <div>${ordernumber}</div>
+                <div class="flex-center">${orderdate}</div>
+                <div class="flex-center">${deliverydate}</div>
+            </div>
+
+            <div class="row txt-normal">
+                <div>${formattedAddress}</div>
                 <div>${customer.name}</div>
-            </div>
-
-            <div class="address">
-                <div>${customer.address}</div>
-            </div>
-
-            <div class="row">
-                <div>${orderdate}</div>
-                <div>${deliverydate}</div>
             </div>
         </div>
     `;

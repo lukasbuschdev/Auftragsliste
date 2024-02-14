@@ -6,9 +6,12 @@
     --clr-white: #FFFFFF;
     --clr-light: #F6F7F8;
     --clr-blue: #29ABE2;
-    --clr-orange: #ff0000b0;
-    --clr-yellow: #ffaa00c9;
-    --clr-green: #79e229c9;
+    --clr-urgent: #ff0000;
+    --clr-urgent-light: #ff0000d0;
+    --clr-medium: #ffaa00;
+    --clr-medium-light: #ffaa00d0;
+    --clr-low: #5bd300fd;
+    --clr-low-light: #5bd300d0;
     --clr-placeholder: #D1D1D1;
     --clr-bg-light: #f7f7f7;
     --clr-bg-dark-mode: #3f3f3f;
@@ -18,8 +21,8 @@
     --clr-pink: #FF6C92;
     --clr-pink-hover: #ff4979;
 
-    --clr-mla: rgb(235, 0, 0);
-    --clr-pha: rgb(0, 145, 0);
+    --clr-mla: #eb0000;
+    --clr-pha: #009100;
 
     --txt-gray: #cdcdcd;
 
@@ -166,13 +169,11 @@ input::placeholder {
 }
 
 .txt-big {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .txt-normal {
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 25.2px;
+    font-size: 1rem;
 }
 
 .txt-small {
@@ -287,14 +288,6 @@ input::placeholder {
 .grid-center {
     display: grid;
     place-items: center;
-}
-
-.mla {
-    margin-left: auto;
-}
-
-.mra {
-    margin-right: auto;
 }
 
 

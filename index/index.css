@@ -7,14 +7,13 @@
 
 
 
-/* TABLE LAYOUT */
+/* TABLE HEADER LAYOUT */
 
 .table-header {
     display: grid;
     height: 80px;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
-    color: var(--clr-dark);
 }
 
 .table-header div {
@@ -24,8 +23,24 @@
     width: 100%;
     border: 1px solid rgb(43, 43, 43);
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
+
+.urgent-light {
+    background-color: var(--clr-urgent-light);
+}
+
+.medium-light {
+    background-color: var(--clr-medium-light);
+}
+
+.low-light {
+    background-color: var(--clr-low-light);    
+}
+
+
+
+/* TABLE CONTENT LAYOUT */
 
 .table-content {
     display: grid;
@@ -39,17 +54,18 @@
 /* TABLE CONTENT COLUMNS */
 
 #urgent {
-    background-color: var(--clr-orange);
+    background-color: var(--clr-urgent);
+    color: var(--clr-white);
 }
 
 #medium {
     border-left: 3px solid rgb(43, 43, 43);
     border-right: 3px solid rgb(43, 43, 43);
-    background-color: var(--clr-yellow);
+    background-color: var(--clr-medium);
 }
 
 #low {
-    background-color: var(--clr-green);
+    background-color: var(--clr-low);
 }
 
 
@@ -57,20 +73,15 @@
 /* SINGLE ORDER TEMPLATES */
 
 .single-order-container {
-    height: 100px;
+    height: 140px;
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     border-bottom: 3px solid rgb(43, 43, 43);
 }
 
 .single-order-container div {
     display: flex;
     align-items: center;
-    height: 30px;
+    height: 100%;
     width: 100%;
-}
-
-.address {
-    border-top: 1px solid rgb(80, 80, 80);
-    border-bottom: 1px solid rgb(80, 80, 80);
 }

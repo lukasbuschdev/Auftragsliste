@@ -2,7 +2,7 @@
 
 async function init() {
     loadHeader();
-    // loadContent();
+    loadContent();
     loadFooter();
 }
 
@@ -10,7 +10,7 @@ async function init() {
 
 // GET DATA FROM DATABASE
 
-async function getData(attr) {
+async function getData(attr = 'pha') {
     const dataset = await (await fetch(`../database-${attr}.json`)).json();
     const data = dataset.orders;
 
@@ -18,15 +18,6 @@ async function getData(attr) {
     const orders = sortOrdersByDate(categorizedOrders);
     return orders;
 }
-
-// async function getDataMLA() {
-//     const dataset = await ((await fetch('../databaseMLA.json')).json());
-//     const data = dataset.orders;
-
-//     const categorizedOrders = categorizeOrdersByDate(data);
-//     const orders = sortOrdersByDate(categorizedOrders);
-//     return orders;
-// }
 
 
 
