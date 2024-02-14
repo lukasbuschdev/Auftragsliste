@@ -39,8 +39,8 @@
                 "name": "Sophie Wagner",
                 "address": "Grazer Platz 8A, 8010 Graz"
             },
-            "orderdate": "25.01.2024",
-            "deliverydate": "29.01.2024",
+            "orderdate": "21.12.2023",
+            "deliverydate": "03.01.2024",
             "status": "to-do",
             "creditorder": "no"
         },
@@ -50,7 +50,7 @@
                 "name": "Andreas Lehner",
                 "address": "Linzergasse 78/3, 4020 Linz"
             },
-            "orderdate": "30.01.2024",
+            "orderdate": "16.01.2024",
             "deliverydate": "01.02.2024",
             "status": "in-progress",
             "creditorder": "no"
@@ -73,7 +73,7 @@
                 "address": "Linzergasse 12, 4020 Linz"
             },
             "orderdate": "30.01.2024",
-            "deliverydate": "06.01.2024",
+            "deliverydate": "06.02.2024",
             "status": "in-progress",
             "creditorder": "no"
         },
@@ -83,8 +83,8 @@
                 "name": "Gertrude Winkler",
                 "address": "Währinger Str. 29, 1090 Wien"
             },
-            "orderdate": "22.01.2024",
-            "deliverydate": "04.01.2024",
+            "orderdate": "12.01.2024",
+            "deliverydate": "24.02.2024",
             "status": "to-do",
             "creditorder": "no"
         },
@@ -95,7 +95,7 @@
                 "address": "Herrengasse 13, 8010 Graz"
             },
             "orderdate": "24.01.2024",
-            "deliverydate": "21.12.2023",
+            "deliverydate": "21.02.2024",
             "status": "to-do",
             "creditorder": "no"
         },
@@ -105,7 +105,7 @@
                 "name": "Hermann vom Lande",
                 "address": "Getreidegasse 22, 5020 Salzburg"
             },
-            "orderdate": "27.01.2024",
+            "orderdate": "27.11.2023",
             "deliverydate": "12.12.2023",
             "status": "in-progress",
             "creditorder": "no"
@@ -128,7 +128,7 @@
                 "address": "Domgasse 3, 9020 Klagenfurt"
             },
             "orderdate": "25.01.2024",
-            "deliverydate": "04.12.2023",
+            "deliverydate": "04.02.2024",
             "status": "in-progress",
             "creditorder": "no"
         },
@@ -139,7 +139,7 @@
                 "address": "Hauptplatz 26, 9500 Villach"
             },
             "orderdate": "23.01.2024",
-            "deliverydate": "19.01.2024",
+            "deliverydate": "29.01.2024",
             "status": "to-do",
             "creditorder": "no"
         },
@@ -149,7 +149,7 @@
                 "name": "Laura Maier",
                 "address": "Stadtplatz 34, 4600 Wels"
             },
-            "orderdate": "27.01.2024",
+            "orderdate": "07.01.2024",
             "deliverydate": "13.01.2024",
             "status": "to-do",
             "creditorder": "no"
@@ -160,7 +160,7 @@
                 "name": "Christian vom Sumpf",
                 "address": "Rathausplatz 1, 3100 St. Pölten"
             },
-            "orderdate": "21.01.2024",
+            "orderdate": "02.01.2024",
             "deliverydate": "13.01.2024",
             "status": "in-progress",
             "creditorder": "no"
@@ -183,7 +183,7 @@
                 "address": "Hauptplatz 17, 2700 Wiener Neustadt"
             },
             "orderdate": "29.01.2024",
-            "deliverydate": "18.01.2024",
+            "deliverydate": "18.02.2024",
             "status": "in-progress",
             "creditorder": "no"
         }
