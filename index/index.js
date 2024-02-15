@@ -27,13 +27,27 @@ function loadContent() {
 
 async function renderOrders(attr) {
     const data = await getData(attr);
+    log(data)
 
-    renderTasks(data);
+    const dataPHA = data.ordersByDatePHA;
+    // const dataMLA = data.ordersByDateMLA;
+
+    renderTasksPHA(dataPHA);
+    // renderTasksMLA(data);
     setDatabaseStyle(attr);
 }
 
-function renderTasks(tasks) {
-    ['urgent', 'medium', 'low'].forEach((category) => {
+function renderTasksPHA(tasks) {
+    ['urgentPHA', 'mediumPHA', 'lowPHA'].forEach((category) => {
+        // log(category)
+        const container = $(`#${category}`);
+        container.innerHTML = tasks[category].reduce((template, task) => `${template}${taskTemplate(task)}`, '');
+    });
+}
+
+function renderTasksMLA(tasks) {
+    ['urgentMLA', 'mediumMLA', 'lowMLA'].forEach((category) => {
+        // log(category)
         const container = $(`#${category}`);
         container.innerHTML = tasks[category].reduce((template, task) => `${template}${taskTemplate(task)}`, '');
     });
