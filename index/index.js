@@ -18,7 +18,7 @@ function loadContent() {
     `;
 
     includeTemplate(contentContainer, content);
-    renderOrders();
+    renderOrders('mla');
 };
 
 
@@ -27,31 +27,31 @@ function loadContent() {
 
 async function renderOrders(attr) {
     const data = await getData(attr);
-    log(data)
 
-    const dataPHA = data.ordersByDatePHA;
-    // const dataMLA = data.ordersByDateMLA;
-
-    renderTasksPHA(dataPHA);
-    // renderTasksMLA(data);
     setDatabaseStyle(attr);
+    getTasks(data, attr);
 }
 
-function renderTasksPHA(tasks) {
-    ['urgentPHA', 'mediumPHA', 'lowPHA'].forEach((category) => {
-        // log(category)
-        const container = $(`#${category}`);
-        container.innerHTML = tasks[category].reduce((template, task) => `${template}${taskTemplate(task)}`, '');
+function getTasks(data, attr) {
+    const dataSet = attr === 'mla' ? data.ordersMLA : data.ordersPHA;
+
+    ['urgent', 'medium', 'low'].forEach(category => {
+        const tasks = dataSet[category];
+        const container = document.getElementById(category);
+
+        if(!container) {
+            error(`Container not found for category: ${category}`);
+            return;
+        }
+
+        container.innerHTML = '';
+
+        tasks.forEach(task => {
+            container.innerHTML += taskTemplate(task);
+        });
     });
 }
 
-function renderTasksMLA(tasks) {
-    ['urgentMLA', 'mediumMLA', 'lowMLA'].forEach((category) => {
-        // log(category)
-        const container = $(`#${category}`);
-        container.innerHTML = tasks[category].reduce((template, task) => `${template}${taskTemplate(task)}`, '');
-    });
-}
 
 function setDatabaseStyle(attr) {
     const headerContainer = $('header');
@@ -62,7 +62,7 @@ function setDatabaseStyle(attr) {
 
 
 
-// TEMPLATES
+// TEMPLATE
 
 function taskTemplate({customer, ordernumber, orderdate, deliverydate}) {
     const formattedAddress = customer.address.replace(/,/, ',<br>');
