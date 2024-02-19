@@ -18,8 +18,19 @@ function loadContent() {
     `;
 
     includeTemplate(contentContainer, content);
-    renderOrders('mla');
+    selectDatabase();
 };
+
+function selectDatabase() {
+    let currentAttr = 'mla';
+
+    renderOrders(currentAttr);
+
+    setInterval(() => {
+        currentAttr = currentAttr === 'pha' ? 'mla' : 'pha';
+        renderOrders(currentAttr);
+    }, 5000);
+}
 
 
 

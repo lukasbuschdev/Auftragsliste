@@ -1,7 +1,7 @@
 // LOADING PAGE
 
 async function init() {
-    loadHeader();
+    // loadHeader();
     loadContent();
 }
 
