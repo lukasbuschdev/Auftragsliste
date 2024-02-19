@@ -168,6 +168,10 @@ input::placeholder {
     color: var(--clr-blue);
 }
 
+.txt-giant {
+    font-size: 1.8rem;
+}
+
 .txt-big {
     font-size: 1.5rem;
 }

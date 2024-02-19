@@ -28,11 +28,11 @@ function loadContent() {
 async function renderOrders(attr) {
     const data = await getData(attr);
 
-    setDatabaseStyle(attr);
-    getTasks(data, attr);
+    // setDatabaseStyle(attr);
+    renderTasks(data, attr);
 }
 
-function getTasks(data, attr) {
+function renderTasks(data, attr) {
     const dataSet = attr === 'mla' ? data.ordersMLA : data.ordersPHA;
 
     ['urgent', 'medium', 'low'].forEach(category => {
@@ -53,31 +53,36 @@ function getTasks(data, attr) {
 }
 
 
-function setDatabaseStyle(attr) {
-    const headerContainer = $('header');
+// function setDatabaseStyle(attr) {
+//     const headerContainer = $('header');
 
-    headerContainer.classList.remove('mla', 'pha');
-    headerContainer.classList.add(attr);
-}
+//     headerContainer.classList.remove('mla', 'pha');
+//     headerContainer.classList.add(attr);
+// }
 
 
 
 // TEMPLATE
 
 function taskTemplate({customer, ordernumber, orderdate, deliverydate}) {
-    const formattedAddress = customer.address.replace(/,/, ',<br>');
+    // const formattedAddress = customer.address.replace(/,/, ',<br>');
+    const address = customer.address.split(',');
+    const formattedAddress = address[1].trim();
+
 
     return /*html*/ `
         <div class="single-order-container column txt-600">
-            <div class="row txt-big">
-                <div>${ordernumber}</div>
-                <div class="flex-center">${orderdate}</div>
-                <div class="flex-center">${deliverydate}</div>
+            <div class="row">
+                <div class="txt-giant">${ordernumber}</div>
+                <div class="row dates-container">
+                    <div class="txt-normal">${orderdate}</div>
+                    <div class="txt-normal">${deliverydate}</div>
+                </div>
             </div>
 
-            <div class="row txt-normal">
-                <div>${formattedAddress}</div>
+            <div class="row txt-normal name-address-container">
                 <div>${customer.name}</div>
+                <div>${formattedAddress}</div>
             </div>
         </div>
     `;

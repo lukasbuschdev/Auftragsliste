@@ -77,15 +77,26 @@
 /* SINGLE ORDER TEMPLATES */
 
 .single-order-container {
-    height: 140px;
+    height: 70px;
     width: 100%;
-    padding: 10px;
+    padding: 10px 5px;
     border-bottom: 3px solid rgb(43, 43, 43);
 }
 
 .single-order-container div {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     height: 100%;
+    width: 100%;
+}
+
+.dates-container {
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.name-address-container div:last-of-type {
+    justify-content: flex-end;
     width: 100%;
 }
