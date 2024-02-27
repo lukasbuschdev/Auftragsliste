@@ -4,22 +4,61 @@ function loadContent() {
     const contentContainer = $('#content');
 
     const content = /*html*/ `
-        <div class="table-header">
-            <div class="urgent-light">> 1M</div>
-            <div class="medium-light">> 1W < 1M</div>
-            <div class="low-light">> 1T < 1W</div>
-        </div>
+        ${tableHeaderTemplate()}
+        ${tableContentTemplate()}
+    `;
 
+    includeTemplate(contentContainer, content);
+    selectDatabase();
+};
+
+
+
+// TABLE TEMPLATES (HEADER / TABLE BODY)
+
+function tableHeaderTemplate() {
+    return /*html*/ `
+        <div class="table-header">
+            <div id="urgent-heading" class="urgent-light">
+                <div>
+                    <span>> 1M</span>
+                    <div id="counter-urgent"></div>
+                </div>
+                <div class="legend"></div>
+            </div>
+
+            <div id="medium-heading" class="medium-light">
+                <div>
+                    <span>> 1W < 1M</span>
+                    <div id="counter-medium"></div>
+                </div>
+                <div class="legend"></div>
+            </div>
+            
+            <div id="low-heading" class="low-light">
+                <div>
+                    <span>> 1T < 1W</span>
+                    <div id="counter-low"></div>
+                </div>
+                <div class="legend"></div>
+            </div>
+        </div>
+    `;
+}
+
+function tableContentTemplate() {
+    return /*html*/ `
         <div class="table-content">
             <div id="urgent"></div>
             <div id="medium"></div>
             <div id="low"></div>
         </div>
     `;
+}
 
-    includeTemplate(contentContainer, content);
-    selectDatabase();
-};
+
+
+// DATABASE SELECTION AND AUTOMATIC CHANGE
 
 function selectDatabase() {
     let currentAttr = 'mla';
@@ -29,7 +68,7 @@ function selectDatabase() {
     setInterval(() => {
         currentAttr = currentAttr === 'pha' ? 'mla' : 'pha';
         renderOrders(currentAttr);
-    }, 5000);
+    }, 50000);
 }
 
 
@@ -38,8 +77,6 @@ function selectDatabase() {
 
 async function renderOrders(attr) {
     const data = await getData(attr);
-
-    // setDatabaseStyle(attr);
     renderTasks(data, attr);
 }
 
@@ -64,22 +101,12 @@ function renderTasks(data, attr) {
 }
 
 
-// function setDatabaseStyle(attr) {
-//     const headerContainer = $('header');
 
-//     headerContainer.classList.remove('mla', 'pha');
-//     headerContainer.classList.add(attr);
-// }
-
-
-
-// TEMPLATE
+// TEMPLATE OF ORDERS
 
 function taskTemplate({customer, ordernumber, orderdate, deliverydate}) {
-    // const formattedAddress = customer.address.replace(/,/, ',<br>');
     const address = customer.address.split(',');
     const formattedAddress = address[1].trim();
-
 
     return /*html*/ `
         <div class="single-order-container column txt-600">
