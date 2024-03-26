@@ -4,30 +4,13 @@ function loadContent() {
     const contentContainer = $('#content');
 
     const content = /*html*/ `
-        ${tableHeaderTemplate()}
-        ${tableContentTemplate()}
-    `;
-
-    includeTemplate(contentContainer, content);
-    selectDatabase();
-};
-
-
-
-// TABLE TEMPLATES (HEADER / TABLE BODY)
-
-function tableHeaderTemplate() {
-    return /*html*/ `
         <div class="table-header">
+            <div class="drafts-light">Entwürfe</div>
             <div class="urgent-light">> 1M</div>
             <div class="medium-light">> 1W < 1M</div>
             <div class="low-light">> 1T < 1W</div>
         </div>
-    `;
-}
 
-function tableContentTemplate() {
-    return /*html*/ `
         <div class="table-content">
             <div id="drafts"></div>
             <div id="urgent"></div>
@@ -35,11 +18,10 @@ function tableContentTemplate() {
             <div id="low"></div>
         </div>
     `;
-}
 
-
-
-// DATABASE SELECTION AND AUTOMATIC CHANGE
+    includeTemplate(contentContainer, content);
+    selectDatabase();
+};
 
 function selectDatabase() {
     let currentAttr = 'pha';
@@ -47,10 +29,10 @@ function selectDatabase() {
 
     renderOrders(currentAttr);
 
-    setInterval(() => {
-        currentAttr = currentAttr === 'pha' ? 'mla' : 'pha';
-        renderOrders(currentAttr);
-    }, 5000);
+    // setInterval(() => {
+    //     currentAttr = currentAttr === 'pha' ? 'mla' : 'pha';
+    //     renderOrders(currentAttr);
+    // }, 5000);
 }
 
 
@@ -59,6 +41,8 @@ function selectDatabase() {
 
 async function renderOrders(attr) {
     const data = await getData(attr);
+
+    // setDatabaseStyle(attr);
     renderTasks(data, attr);
 }
 
@@ -78,8 +62,16 @@ function renderTasks(data, attr) {
 }
 
 
+// function setDatabaseStyle(attr) {
+//     const headerContainer = $('header');
 
-// TEMPLATE OF ORDERS
+//     headerContainer.classList.remove('mla', 'pha');
+//     headerContainer.classList.add(attr);
+// }
+
+
+
+// TEMPLATE
 
 function taskTemplate({customer, ordernumber, orderdate, deliverydate}) {
     const address = customer.address.split(',');
