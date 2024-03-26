@@ -3,8 +3,6 @@
 #content {
     height: 100vh;
     width: 100%;
-    /* border-left: 3px solid rgb(43, 43, 43);
-    border-right: 3px solid rgb(43, 43, 43); */
 }
 
 
@@ -15,7 +13,7 @@
     display: grid;
     height: 80px;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .table-header div {
@@ -29,8 +27,13 @@
     font-size: 2rem;
 }
 
+.drafts-light {
+    background-color: var(--clr-drafts-light);
+}
+
 .urgent-light {
     background-color: var(--clr-urgent-light);
+    border-left: 3px solid rgb(43, 43, 43);
 }
 
 .medium-light {
@@ -49,35 +52,30 @@
 
 .table-content {
     display: grid;
-    height: 100vh;
+    height: calc(100vh - 80px);
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 
 
 /* TABLE CONTENT COLUMNS */
 
-/* #urgent {
-    background-color: var(--clr-urgent);
-    color: var(--clr-white);
-} */
+#urgent {
+    border-left: 3px solid rgb(43, 43, 43);
+}
 
 #medium {
     border-left: 3px solid rgb(43, 43, 43);
     border-right: 3px solid rgb(43, 43, 43);
 }
 
-/* #low {
-    background-color: var(--clr-low);
-}  */
-
 
 
 /* SINGLE ORDER TEMPLATES */
 
 .single-order-container {
-    height: 75px;
+    height: 100px;
     width: 100%;
     padding: 10px 5px;
     border-bottom: 3px solid rgb(43, 43, 43);
@@ -86,17 +84,20 @@
 .single-order-container div {
     display: flex;
     align-items: center;
-    /* justify-content: flex-end; */
     height: 100%;
     width: 100%;
 }
 
 .dates-container div {
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.address-container {
     justify-content: flex-end;
     width: 100%;
 }
 
-.name-address-container div:last-of-type {
+.name-container {
     justify-content: flex-end;
-    width: 100%;
 }

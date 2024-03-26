@@ -6,10 +6,12 @@
     --clr-white: #FFFFFF;
     --clr-light: #F6F7F8;
     --clr-blue: #29ABE2;
+    --clr-drafts: #0099ff;
+    --clr-drafts-light: #0099ffd0;
     --clr-urgent: #ff0000;
     --clr-urgent-light: #ff0000d0;
-    --clr-medium: #ffaa00;
-    --clr-medium-light: #ffaa00d0;
+    --clr-medium: #fffb00;
+    --clr-medium-light: #fffb00d0;
     --clr-low: #5bd300fd;
     --clr-low-light: #5bd300d0;
     --clr-placeholder: #D1D1D1;
